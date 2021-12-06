@@ -21,4 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::middleware(['cors'])->group(function() {
     Route::get('/articles', [BlogController::class, 'getArticlesJson']);
+    Route::get('/article/{id}', [BlogController::class, 'getArticleJson']);
 });

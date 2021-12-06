@@ -24,7 +24,7 @@
               <div>
                 <label for="content">本文</label>
               </div>
-              <textarea required name="content" id="content" cols="60" rows="20" value="{{ $article->article_content }}"></textarea>
+              <textarea required name="content" id="content" cols="60" rows="20" wrap="hard">{{ $article->article_content }}</textarea>
             </div>
             <div>
               <button type="button" onclick="location.href='/dashboard'" class="px-4 py-2 m-2 bg-gray-500 hover:bg-gray-400 font-bold text-white border transition rounded">戻る</button>

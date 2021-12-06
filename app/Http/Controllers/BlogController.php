@@ -11,4 +11,9 @@ class BlogController extends Controller
         $articles = Article::all();
         return $this->jsonResponse($articles);
     }
+
+    public function getArticlejson($id) {
+        $article = Article::find($id);
+        return $this->jsonResponse($article);
+    }
 }
