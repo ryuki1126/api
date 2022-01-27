@@ -5405,32 +5405,32 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var marked__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! marked */ "./node_modules/marked/lib/marked.esm.js");
- // マークダウンをプレビュー画面に表示する
+// __webpack_require__.r(__webpack_exports__);
+// /* harmony import */ var marked__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! marked */ "./node_modules/marked/lib/marked.esm.js");
+//  // マークダウンをプレビュー画面に表示する
 
-$(function () {
-  marked__WEBPACK_IMPORTED_MODULE_0__["default"].setOptions({
-    langPrefix: '',
-    breaks: true,
-    sanitize: true
-  });
-  $('#markdown_editor_textarea').keyup(function () {
-    var html = (0,marked__WEBPACK_IMPORTED_MODULE_0__["default"])(getHtml($(this).val()));
-    $('#markdown_preview').html(html);
-  }); //マークダウンをHTMLに変換する
+// $(function () {
+//   marked__WEBPACK_IMPORTED_MODULE_0__["default"].setOptions({
+//     langPrefix: '',
+//     breaks: true,
+//     sanitize: true
+//   });
+//   $('#markdown_editor_textarea').keyup(function () {
+//     var html = (0,marked__WEBPACK_IMPORTED_MODULE_0__["default"])(getHtml($(this).val()));
+//     $('#markdown_preview').html(html);
+//   }); //マークダウンをHTMLに変換する
 
-  var target = $('.item-body');
-  var html = (0,marked__WEBPACK_IMPORTED_MODULE_0__["default"])(getHtml(target.html()));
-  $('.item-body').html(html); // 比較演算子が &lt; 等になるので置換
+//   var target = $('.item-body');
+//   var html = (0,marked__WEBPACK_IMPORTED_MODULE_0__["default"])(getHtml(target.html()));
+//   $('.item-body').html(html); // 比較演算子が &lt; 等になるので置換
 
-  function getHtml(html) {
-    html = html.replace(/&lt;/g, '<');
-    html = html.replace(/&gt;/g, '>');
-    html = html.replace(/&amp;/g, '&');
-    return html;
-  }
-});
+//   function getHtml(html) {
+//     html = html.replace(/&lt;/g, '<');
+//     html = html.replace(/&gt;/g, '>');
+//     html = html.replace(/&amp;/g, '&');
+//     return html;
+//   }
+// });
 
 /***/ }),
 

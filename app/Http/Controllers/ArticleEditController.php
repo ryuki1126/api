@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Mail\Markdown;
 
 class ArticleEditController extends Controller
 {
     public function index() {
-        $articles = Article::paginate(10);
+        $articles = Article::paginate(5);
         return view('dashboard', [
             'articles' => $articles
         ]);
@@ -29,8 +30,10 @@ class ArticleEditController extends Controller
 
     public function detail($id) {
         $article = Article::find($id);
+        $content = Markdown::parse(e($article->article_content));
         return view('detail', [
-            'article' => $article
+            'article' => $article,
+            'content' => $content
         ]);
     }
 
